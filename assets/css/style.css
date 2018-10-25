@@ -1,0 +1,116 @@
+body {
+    background: url("../images/background.png");
+}
+
+.container {
+    width: 50%;
+    margin:auto;
+
+}
+
+#head {
+    font-size: 40px;
+    text-align: center;
+    background-color: lightgreen;
+    margin-bottom: 15px;
+    border: 2px solid green;
+    
+}
+
+#instructions {
+    text-align: center;
+    background-color: beige;
+    padding: 10px;
+    font-size: 18px;
+    border: solid 2px black;
+
+}
+
+#randomNumber {
+    background-color: aquamarine;
+    margin: 10px 20px;
+    height: 80px;
+    width: 45%;
+    border: green 2px solid;
+    text-align: center;
+    font-size: 40px;
+    float:left;
+    padding-top: 10px;
+    
+}
+
+#tracker {
+    float: left;
+    width: 45%;
+    margin: 10px;
+    height: 80px;
+    background-color: bisque;
+    border: rgb(161, 207, 108) 2px solid;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+button {
+    width: 20%;
+    margin: 5px;;
+    float: left;
+    height: 100px;
+    text-align: center;
+    background-color: rgb(218, 241, 173);
+    position: relative;
+    left: 60px;
+    
+}
+
+#pic1 {
+    clear: auto;
+    height: 90px; 
+    width: 85px;
+
+}
+
+#pic2 {
+    height: 100px; 
+    width: 130px;
+
+}
+
+#pic3 {
+    height: 100px; 
+    width: 100px;
+
+}
+
+#pic4 {
+    height: 80px; 
+    width: 70px;
+
+}
+
+#scoreHeader {
+    width: 60%;
+    height: 50px;
+    background-color: rgb(101, 231, 188);
+    float: left;
+    font-size: 30px;
+    text-align: center;
+    color: gray;
+    position: relative;
+    left: 50px;
+    border: solid 2px gray;
+    margin-top: 8px;
+}
+
+#score {
+    float: left;
+    width: 70%;
+    background-color:  rgb(101, 231, 188);
+    border: solid 2px gray;
+    font-size: 50px;
+    text-align: center;
+    padding-top: 20px;
+    height: 80px;
+    margin-top: 10px;
+    position: relative;
+    left: 50px;
+}
