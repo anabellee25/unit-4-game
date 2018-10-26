@@ -44,7 +44,7 @@ $(".btn").on("click",function(){
    console.log("userValue: "+userValue);
 
    // Add crystal value to the counter and update the score.
-   counter = counter + parseInt(userValue);
+   counter = 1 + "2"
    $("#score-value").text(counter);
 
 

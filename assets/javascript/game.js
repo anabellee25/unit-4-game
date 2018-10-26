@@ -16,71 +16,84 @@ function randomNumberFromRange(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
  }
  
- function generateTargetNumber() {
+function generateTargetNumber() {
     var minNumber = 19;
     var maxNumber = 120;
  
-    var computerTargetNumber = randomNumberFromRange(minNumber, maxNumber);    
-    console.log(computerTargetNumber);
+    computerTargetNumber = randomNumberFromRange(minNumber, maxNumber);    
+    console.log("target",computerTargetNumber);
     $("#randomNumber").text(computerTargetNumber);
  
  }
 
  generateTargetNumber();
 
+var gems = {}
 function generateGemNumbers() {
     var minNumber = 1;
     var maxNumber = 12;
  
-    var randomNumber = randomNumberFromRange(minNumber, maxNumber);
-    var gemTwo = randomNumberFromRange(minNumber, maxNumber);
-    var gemThree = randomNumberFromRange(minNumber, maxNumber);
-    var gemFour = randomNumberFromRange(minNumber, maxNumber);
+    gems.one = randomNumberFromRange(minNumber, maxNumber);
+    gems.two = randomNumberFromRange(minNumber, maxNumber);
+    gems.three = randomNumberFromRange(minNumber, maxNumber);
+    gems.four = randomNumberFromRange(minNumber, maxNumber);
     
- 
-    console.log(gemTwo);
+};
 
+ function run () {
     $("#gem1").click(function () {
-        sumOfGemValue = sumOfGemValue + randomNumber;
+        sumOfGemValue = sumOfGemValue + gems.one;
         $("#score").text(sumOfGemValue);
+        matchingUserToComp ();
     })
     $("#gem2").click(function () {
-        sumOfGemValue = sumOfGemValue + gemTwo;
+        sumOfGemValue = sumOfGemValue + gems.two;
         $("#score").text(sumOfGemValue);
+        matchingUserToComp ();
     })
     $("#gem3").click(function () {
-        sumOfGemValue = sumOfGemValue + gemThree;
+        sumOfGemValue = sumOfGemValue + gems.three;
         $("#score").text(sumOfGemValue);
+        matchingUserToComp ();
     })
     $("#gem4").click(function () {
-        sumOfGemValue = sumOfGemValue + gemFour;
+        sumOfGemValue = sumOfGemValue + gems.four;
         $("#score").text(sumOfGemValue);
+        matchingUserToComp ();
     })
+
+}
+
  
- }
+ function matchingUserToComp () {
+     
+     if (sumOfGemValue === computerTargetNumber) {
+         console.log(sumOfGemValue, computerTargetNumber)
+         console.log("win");
+         wins++;
+         $("#wins").text("Wins: " + wins);
+         sumOfGemValue = 0;
+         $("#score").text(sumOfGemValue);
+         generateTargetNumber();
+         generateGemNumbers();
+         
+    } else if (sumOfGemValue > computerTargetNumber) {
+        console.log("loss");
 
- generateGemNumbers();
+        losses++;
+        $("#losses").text("Losses: " + losses);
+        sumOfGemValue = 0;
+        $("#score").text(sumOfGemValue);
+        generateTargetNumber();
+        generateGemNumbers();
+    }  else {
+        console.log("game continues");
+    }
+        
+};
 
-function matchingUserToComp () {
-    
-if (sumOfGemValue === computerTargetNumber) {
-    wins++;
-    $("#wins").append(wins);
 
-    generateTargetNumber();
-    generateGemNumbers();
-
-  }
-
-else {
-    losses++;
-    $("#losses").append(losses);
-    generateTargetNumber();
-    generateGemNumbers();
-   }
-
-  };
-matchingUserToComp ();
-
+generateGemNumbers();
+run ();
 
 
